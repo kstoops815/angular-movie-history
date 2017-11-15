@@ -1,0 +1,17 @@
+.movie {
+	.poster_path{
+		height: 390px;
+	}
+
+	h3{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.overview{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		height: 100px;
+	}
+}
