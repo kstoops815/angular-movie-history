@@ -1,4 +1,4 @@
- <nav class="navbar navbar-inverse">
+ <nav class="navbar navbar-inverse" ng-controller="NavCtrl">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -21,7 +21,7 @@
           <li><a ng-href="#!/wishlist">Wishlist</a></li>
           <li><a ng-href="#!/rated">Rated</a></li>
           <li><a ng-href="#!/search">Search</a></li>
-          <li><a ng-href="#!/logout">Logout</a></li>
+          <li><a ng-click="logoutUser()">Logout</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
