@@ -5,12 +5,15 @@
 	<div ng-repeat="movie in movies" class="col-sm-6 col-md-4 movie">
 			<div class="thumbnail">
 				<button class="btn btn-default delete" ng-click="deleteMovie(movie.id)">X</button>
+				<button class="btn btn-default detail" ng-click="movieDetail(movie.id)">Search</button>
 				<img class="poster_path" ng-src="{{image_url}}w342/{{movie.poster_path}}" alt="">
 				<div class="caption">
 					<h3 class="title">{{movie.title}}</h3>	
 					<p class="overview">{{movie.overview}}</p>
 					<p>
-						<p>Rating: {{movie.rating}}</p>
+						<p>Rating: 
+							<star-rating-comp rating="movie.rating" size="'large'" num-of-start="5" on-click="starChange($event, movie)"></star-rating-comp>
+						</p>
 					</p>
 				</div>
 			</div>

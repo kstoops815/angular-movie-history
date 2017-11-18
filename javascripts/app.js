@@ -4,5 +4,5 @@
 
 
 
-const app = angular.module("MovieApp", ["ngAnimate", "ngRoute", "ngSanitize"]);
+const app = angular.module("MovieApp", ["ngAnimate", "ngRoute", "ngSanitize", "star-rating"]);
 

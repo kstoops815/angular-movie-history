@@ -1,0 +1,21 @@
+<div>
+	<div class="col-xs-4">
+		<img class="poster_path" ng-src="{{image_url}}w342/{{movie.poster_path}}" alt="">
+	
+	</div>
+	<div class="col-xs-8">
+		<h3>{{movie.title}}</h3>
+		<p>{{movie.overview}}</p>
+
+		<p ng-if="movie.isWatched">
+			Rating: 
+			<star-rating-comp rating="movie.rating" size="'large'" num-of-start="5" on-click="starChange($event, movie)"></star-rating-comp>
+		</p>
+		<p ng-if="!movie.isWatched">
+			<button class="btn btn-default" ng-click="switchWatched(movie, movie.id)">I watched it!</button>
+		</p>
+	</div>
+
+
+
+</div>

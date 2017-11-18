@@ -32,7 +32,7 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 
 	$scope.saveWishlist = (tmdbMovie) => {
 		tmdbMovie.uid = $rootScope.uid;
-		tmdbMovie.isWatched = true;
+		tmdbMovie.isWatched = false;
 		tmdbMovie.rating = 0;
 		console.log("tmdbMovie", tmdbMovie);
 		let newMovie = MovieService.createMovieObject(tmdbMovie);
