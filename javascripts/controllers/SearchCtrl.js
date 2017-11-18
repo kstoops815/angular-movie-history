@@ -7,7 +7,6 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 
 	$scope.enterPush = (event) => {
 		if(event.keyCode === 13){
-			console.log("event", event.target.value);
 			tmdbService.searchMovies(event.target.value).then((results) => {
 				$scope.movies=results.data.results;
 			}).catch((error) => {
@@ -19,7 +18,7 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 
 	$scope.saveRated = (tmdbMovie) => {
 		tmdbMovie.uid = $rootScope.uid;
-		tmdbMovie.isWatched = false;
+		tmdbMovie.isWatched = true;
 		tmdbMovie.rating = 0;
 		let newMovie = MovieService.createMovie(tmdbMovie);
 		MovieService.postNewMovie(newMovie).then(() => {
@@ -34,7 +33,6 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 		tmdbMovie.uid = $rootScope.uid;
 		tmdbMovie.isWatched = false;
 		tmdbMovie.rating = 0;
-		console.log("tmdbMovie", tmdbMovie);
 		let newMovie = MovieService.createMovieObject(tmdbMovie);
 		MovieService.postNewMovie(newMovie).then(() => {
 			$location.path('/wishlist');

@@ -9,7 +9,7 @@ app.controller("RatedCtrl", function($location, $rootScope, $scope, MovieService
 	}).catch((error) => {
 		console.log("error in getRatedMovies", error);
 	});
-	};
+};
 
 	getMovies();
 
@@ -23,7 +23,7 @@ app.controller("RatedCtrl", function($location, $rootScope, $scope, MovieService
 	};
 
 
-	$scope.starChange = ($event, movie) => {
+	$scope.starChange = (event, movie) => {
 		if(event.rating) {
 			movie.rating = event.rating;
 			let updatedMovie = MovieService.createMovieObject(movie);
