@@ -22,4 +22,17 @@ app.controller("WishlistCtrl", function($rootScope, $scope, MovieService){
 		});
 	};
 
+	$scope.switchWatched = (movie, movieId) => {
+		console.log("movieId", movieId);
+		movie.isWatched = true;
+		console.log("switchWatched", movie);
+		let updatedMovie = MovieService.createMovieObject(movie);
+		MovieService.updateMovie(updatedMovie, movieId).then((result) => {
+			console.log("result", result);
+			getMovies();
+		}).catch((error) => {
+			console.log("error in updateMovie", error);
+		});
+	};
+
 });
