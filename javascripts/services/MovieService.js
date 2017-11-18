@@ -22,6 +22,7 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
 
 	const getWishlistMovies = (userUid) => {
 		let movies = [];
+		console.log("userUid", userUid);
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/movies.json?orderBy="uid"&equalTo="${userUid}"`).then((results) =>{
 				let fbMovies = results.data;
@@ -41,6 +42,8 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
 
 
 	const postNewMovie = (newMovie) => {
+		console.log("newMovie", newMovie);
+		console.log(FIREBASE_CONFIG);
 		return $http.post(`${FIREBASE_CONFIG.databaseURL}/movies.json`, JSON.stringify(newMovie));
 	};
 
@@ -64,7 +67,11 @@ app.service("MovieService", function($http, $q, FIREBASE_CONFIG){
 		};
 	};
 
+	const getSingleMovie = (movieId) => {
+		return $http.get(`${FIREBASE_CONFIG.databaseURL}/movies/${movieId}.json`);
+	};
 
-	return {getRatedMovies, getWishlistMovies, postNewMovie, deleteMovie, updateMovie, createMovieObject};
+
+	return {getSingleMovie, getRatedMovies, getWishlistMovies, postNewMovie, deleteMovie, updateMovie, createMovieObject};
 });
 
