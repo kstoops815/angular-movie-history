@@ -1,8 +1,13 @@
 <div class="text-center" id="rated">
-	<h1>My Rated Movies</h1>
+	<h1>My Rated Movies hey</h1>
+
+	<div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
+		<span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>
+		<input type="text" class="form-control" placeholder="Find a movie" ng-model="searchText">
+	</div>
 	
 	<div id="movies">
-	<div ng-repeat="movie in movies" class="col-sm-6 col-md-4 movie">
+	<div ng-repeat="movie in movies | filter: searchText" class="col-sm-6 col-md-4 movie">
 			<div class="thumbnail">
 				<button class="btn btn-default delete" ng-click="deleteMovie(movie.id)">X</button>
 				<button class="btn btn-default detail" ng-click="movieDetail(movie.id)">Movie Details</button>
