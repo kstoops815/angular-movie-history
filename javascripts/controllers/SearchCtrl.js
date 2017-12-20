@@ -42,9 +42,4 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 	
 	};
 
-
-
-
-
-
 });
