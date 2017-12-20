@@ -20,7 +20,7 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 		tmdbMovie.uid = $rootScope.uid;
 		tmdbMovie.isWatched = true;
 		tmdbMovie.rating = 0;
-		let newMovie = MovieService.createMovie(tmdbMovie);
+		let newMovie = MovieService.createMovieObject(tmdbMovie);
 		MovieService.postNewMovie(newMovie).then(() => {
 			$location.path('/rated');
 		}).catch((error) => {
@@ -41,10 +41,5 @@ app.controller("SearchCtrl", function($location, $rootScope, $scope, MovieServic
 		});
 	
 	};
-
-
-
-
-
 
 });

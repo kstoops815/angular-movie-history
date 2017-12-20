@@ -11,8 +11,6 @@ app.controller("WishlistCtrl", function($location, $rootScope, $scope, MovieServ
 	};
 
 	getMovies();
-	
-
 
 	$scope.deleteMovie = (movieId) => {
 		MovieService.deleteMovie(movieId).then((result) =>{

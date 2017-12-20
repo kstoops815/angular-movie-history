@@ -13,7 +13,6 @@ app.controller("RatedCtrl", function($location, $rootScope, $scope, MovieService
 
 	getMovies();
 
-
 	$scope.deleteMovie = (movieId) => {
 		MovieService.deleteMovie(movieId).then((result) =>{
 			getMovies();
@@ -21,7 +20,6 @@ app.controller("RatedCtrl", function($location, $rootScope, $scope, MovieService
 			console.log("error in deleteMovie", error);
 		});
 	};
-
 
 	$scope.starChange = (event, movie) => {
 		if(event.rating) {

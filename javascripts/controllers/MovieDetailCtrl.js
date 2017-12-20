@@ -13,7 +13,6 @@ app.controller("MovieDetailCtrl", function($routeParams, $scope, MovieService){
 	};
 
 	getMovie();
-	
 
 	$scope.switchWatched = (movie, movieId) => {
 		movie.isWatched = true;
@@ -36,9 +35,5 @@ app.controller("MovieDetailCtrl", function($routeParams, $scope, MovieService){
 			});
 		}
 	};
-
-
-
-
 
 });
